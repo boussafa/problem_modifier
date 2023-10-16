@@ -1,0 +1,32 @@
+ALGORITHM Problem02
+VAR
+    v1:array_name : ARRAY_OF type[10];
+    v2:array_name : ARRAY_OF type[10];
+    ps:INTEGER;
+
+// Function to calcule the dot(scalar) product of tow vectors  
+FUNCTION dot_product(v1,v2) : INTEGER
+VAR
+    i,j,p:INTEGER
+BEGIN
+p:=0;
+    FOR i FROM 0 TO 9 STEP 1  DO
+        FOR j FROM 0 TO 9 STEP 1  DO
+            p:=p+(v1[i]*v2[j]);
+        END_FOR
+    END_FOR
+    RETURN p ;
+END dot_product (v1,v2)   
+
+
+BEGIN
+// fetch the result of the funtion to the variable 
+    ps:=dot_product(v1,v2);
+    // check if tow vector are orthogonal 
+   IF (ps:=0) THEN
+        print("les deux vecteurs sont orthogonaux");
+    ELSE
+     print("les deux vecteurs ne sont pas  orthogonaux");
+
+    END_IF
+END

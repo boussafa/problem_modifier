@@ -1,0 +1,32 @@
+ALGORITHM Problem01
+VAR
+    i,j,s:INTEGER;
+    t1 : ARRAY_OF type[10];
+    t2 : ARRAY_OF type[10];
+BEGIN
+// Insert Data to table 1 
+    FOR i FROM 0 TO 9 STEP 1  DO
+        print("Insert Data to Table 1");
+        read(t1[i]);
+    END_FOR
+
+    // Insert Data to table 2
+     FOR j FROM 0 TO 9 STEP 1  DO
+        print("Insert Data to Table 2");
+        read(t2[j]);
+    END_FOR
+    // Initialize Sum
+    s:=0;
+
+    // check and addition the disctinct element in the tow table 
+    FOR i FROM 0 TO 9 STEP 1  DO
+        FOR j FROM 0 TO 9 STEP 1  DO
+            if(t1[i]<>t2[j]){
+                s=s+t1[i];
+            }
+        END_FOR
+    END_FOR
+    
+    // print result
+    print("The result is : ",s);
+END
